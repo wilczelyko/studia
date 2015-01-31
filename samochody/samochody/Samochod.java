@@ -21,7 +21,6 @@ public class Samochod implements Serializable{
 
 	public String getRejestracja()
 	{
-		int i = 1;
 		return rejestracja;
 	}
 	public void amortyzuj()
