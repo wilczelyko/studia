@@ -1,0 +1,890 @@
+<?xml version="1.0" encoding="UTF-8"?><TestSessionContainer xmlns="http://www.codecover.org/xml/testsession-container" Date="1422693916362" TestSessionContainerId="2fa8ea1e-29b4-4642-ad4f-57946aff0ddd" version="1.0">
+<SrcFileList>
+<SrcFile Content="package samochody;&#13;&#10;&#13;&#10;import java.io.Serializable;&#13;&#10;&#13;&#10;public class Samochod implements Serializable{&#13;&#10;&#9;private String rejestracja;&#13;&#10;&#9;private float wartosc;&#13;&#10;&#9;private float amortyzacja;&#13;&#10;&#9;&#13;&#10;&#9;public Samochod(String rejestracja, float wartosc, float amortyzacja)&#13;&#10;&#9;{&#13;&#10;&#9;&#9;this.rejestracja=rejestracja;&#13;&#10;&#9;&#9;this.wartosc=wartosc;&#13;&#10;&#9;&#9;this.amortyzacja=amortyzacja;&#13;&#10;&#9;}&#13;&#10;&#9;&#13;&#10;&#9;public String getRejestracja()&#13;&#10;&#9;{&#13;&#10;&#9;&#9;return rejestracja;&#13;&#10;&#9;}&#13;&#10;&#9;public void amortyzuj()&#13;&#10;&#9;{&#13;&#10;&#9;&#9;this.wartosc-=this.wartosc*this.amortyzacja/100.0;&#13;&#10;&#9;}&#13;&#10;&#9;public float getWartosc()&#13;&#10;&#9;{&#13;&#10;&#9;&#9;return this.wartosc;&#13;&#10;&#9;}&#13;&#10;&#9;&#13;&#10;}&#13;&#10;" Filename="Samochod.java" Intrnl_Id="1"/>
+<SrcFile Content="package samochody;&#13;&#10;&#13;&#10;import java.io.Serializable;&#13;&#10;import java.util.ArrayList;&#13;&#10;import java.util.Iterator;&#13;&#10;&#13;&#10;public class Kierowca implements Serializable {&#13;&#10;&#13;&#10;&#9;private int pesel;&#13;&#10;&#9;private String imie;&#13;&#10;&#9;private String nazwisko;&#13;&#10;&#9;private ArrayList&lt;Samochod&gt; samochody;&#13;&#10;&#9;&#13;&#10;&#9;public Kierowca(int pesel, String imie, String nazwisko)&#13;&#10;&#9;{&#13;&#10;&#9;&#9;this.pesel=pesel;&#13;&#10;&#9;&#9;this.imie=imie;&#13;&#10;&#9;&#9;this.nazwisko=nazwisko;&#13;&#10;&#9;&#9;samochody=new ArrayList&lt;Samochod&gt;();&#13;&#10;&#9;}&#13;&#10;&#9;public int getPesel(){return pesel;}&#13;&#10;&#9;public Samochod znajdzSamochod(String rejestracja)&#13;&#10;&#9;{&#9;&#9; &#9;&#9;   &#13;&#10;&#9;&#9;  for (Iterator&lt;Samochod&gt; it = samochody.iterator(); it.hasNext (); ) {&#13;&#10;&#9;&#9;    Samochod k = it.next();&#13;&#10;&#9;&#9;    if(k.getRejestracja()==rejestracja)&#13;&#10;&#9;&#9;    &#9;return k;&#13;&#10;&#9;&#9;  }&#13;&#10;&#9;&#9;return null;&#13;&#10;&#9;}&#13;&#10;&#9;public String getImieINazwisko()&#13;&#10;&#9;{&#13;&#10;&#9;&#9;return imie+&quot; &quot;+ nazwisko;&#13;&#10;&#9;}&#13;&#10;&#9;public void amortyzujSamochody()&#13;&#10;&#9;{&#13;&#10;&#9;&#9; for (Iterator&lt;Samochod&gt; it = samochody.iterator(); it.hasNext (); ) {&#13;&#10;&#9;&#9;&#9;    Samochod k = it.next();&#13;&#10;&#9;&#9;&#9;    k.amortyzuj();&#13;&#10;&#9;&#9; }&#13;&#10;&#9;}&#9;&#13;&#10;&#9;public void dodajSamochod(Samochod samochod)&#13;&#10;&#9;{&#13;&#10;&#9;&#9;samochody.add(samochod);&#13;&#10;&#9;}&#13;&#10;}&#13;&#10;" Filename="Kierowca.java" Intrnl_Id="2"/>
+</SrcFileList>
+<CritList>
+<CritListEntry Name="org.codecover.model.utils.criteria.LoopCoverage" PluginName="org.codecover"/>
+<CritListEntry Name="org.codecover.model.utils.criteria.BranchCoverage" PluginName="org.codecover"/>
+<CritListEntry Name="org.codecover.model.utils.criteria.ConditionCoverage" PluginName="org.codecover"/>
+<CritListEntry Name="org.codecover.model.utils.criteria.StatementCoverage" PluginName="org.codecover"/>
+</CritList>
+<BoolOpList/>
+<HierarchyLvlTypeList>
+<HierarchyLvlType EnglishName="package" IntrnlName="package" Intrnl_Id="3"/>
+<HierarchyLvlType EnglishName="class" IntrnlName="class" Intrnl_Id="4"/>
+<HierarchyLvlType EnglishName="method" IntrnlName="method" Intrnl_Id="5"/>
+<HierarchyLvlType EnglishName="default package" IntrnlName="default package" Intrnl_Id="6"/>
+</HierarchyLvlTypeList>
+<MASTRoot>
+<HierarchyLvl HierarchyLvlId="99" HierarchyLvlTypeId="6" Intrnl_Id="7" Name="default package">
+<Header/>
+<LocList/>
+<HierarchyLvl HierarchyLvlId="98" HierarchyLvlTypeId="3" Intrnl_Id="8" Name="samochody">
+<Header/>
+<LocList/>
+<HierarchyLvl HierarchyLvlId="90" HierarchyLvlTypeId="4" Intrnl_Id="9" Name="Samochod">
+<Header>
+<Loc EndOffset="99" SrcFileId="1" StartOffset="54"/>
+</Header>
+<LocList>
+<Loc EndOffset="579" SrcFileId="1" StartOffset="54"/>
+</LocList>
+<HierarchyLvl HierarchyLvlId="86" HierarchyLvlTypeId="5" Intrnl_Id="10" Name="Samochod">
+<Header>
+<Loc EndOffset="259" SrcFileId="1" StartOffset="190"/>
+</Header>
+<LocList>
+<Loc EndOffset="358" SrcFileId="1" StartOffset="190"/>
+</LocList>
+<StmntSeq Intrnl_Id="11">
+<LocList>
+<Loc EndOffset="296" SrcFileId="1" StartOffset="267"/>
+<Loc EndOffset="321" SrcFileId="1" StartOffset="300"/>
+<Loc EndOffset="354" SrcFileId="1" StartOffset="325"/>
+</LocList>
+<BasicStmnt CovItemId="S1" CovItemPrefix="samochody.Samochod.java" Intrnl_Id="12">
+<LocList>
+<Loc EndOffset="296" SrcFileId="1" StartOffset="267"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S2" CovItemPrefix="samochody.Samochod.java" Intrnl_Id="13">
+<LocList>
+<Loc EndOffset="321" SrcFileId="1" StartOffset="300"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S3" CovItemPrefix="samochody.Samochod.java" Intrnl_Id="14">
+<LocList>
+<Loc EndOffset="354" SrcFileId="1" StartOffset="325"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="87" HierarchyLvlTypeId="5" Intrnl_Id="15" Name="getRejestracja">
+<Header>
+<Loc EndOffset="394" SrcFileId="1" StartOffset="364"/>
+</Header>
+<LocList>
+<Loc EndOffset="425" SrcFileId="1" StartOffset="364"/>
+</LocList>
+<StmntSeq Intrnl_Id="16">
+<LocList>
+<Loc EndOffset="421" SrcFileId="1" StartOffset="402"/>
+</LocList>
+<BasicStmnt CovItemId="S4" CovItemPrefix="samochody.Samochod.java" Intrnl_Id="17">
+<LocList>
+<Loc EndOffset="421" SrcFileId="1" StartOffset="402"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="88" HierarchyLvlTypeId="5" Intrnl_Id="18" Name="amortyzuj">
+<Header>
+<Loc EndOffset="451" SrcFileId="1" StartOffset="428"/>
+</Header>
+<LocList>
+<Loc EndOffset="513" SrcFileId="1" StartOffset="428"/>
+</LocList>
+<StmntSeq Intrnl_Id="19">
+<LocList>
+<Loc EndOffset="509" SrcFileId="1" StartOffset="459"/>
+</LocList>
+<BasicStmnt CovItemId="S5" CovItemPrefix="samochody.Samochod.java" Intrnl_Id="20">
+<LocList>
+<Loc EndOffset="509" SrcFileId="1" StartOffset="459"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="89" HierarchyLvlTypeId="5" Intrnl_Id="21" Name="getWartosc">
+<Header>
+<Loc EndOffset="541" SrcFileId="1" StartOffset="516"/>
+</Header>
+<LocList>
+<Loc EndOffset="573" SrcFileId="1" StartOffset="516"/>
+</LocList>
+<StmntSeq Intrnl_Id="22">
+<LocList>
+<Loc EndOffset="569" SrcFileId="1" StartOffset="549"/>
+</LocList>
+<BasicStmnt CovItemId="S6" CovItemPrefix="samochody.Samochod.java" Intrnl_Id="23">
+<LocList>
+<Loc EndOffset="569" SrcFileId="1" StartOffset="549"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="97" HierarchyLvlTypeId="4" Intrnl_Id="24" Name="Kierowca">
+<Header>
+<Loc EndOffset="156" SrcFileId="2" StartOffset="111"/>
+</Header>
+<LocList>
+<Loc EndOffset="1085" SrcFileId="2" StartOffset="111"/>
+</LocList>
+<HierarchyLvl HierarchyLvlId="91" HierarchyLvlTypeId="5" Intrnl_Id="25" Name="Kierowca">
+<Header>
+<Loc EndOffset="334" SrcFileId="2" StartOffset="278"/>
+</Header>
+<LocList>
+<Loc EndOffset="449" SrcFileId="2" StartOffset="278"/>
+</LocList>
+<StmntSeq Intrnl_Id="26">
+<LocList>
+<Loc EndOffset="359" SrcFileId="2" StartOffset="342"/>
+<Loc EndOffset="378" SrcFileId="2" StartOffset="363"/>
+<Loc EndOffset="405" SrcFileId="2" StartOffset="382"/>
+<Loc EndOffset="445" SrcFileId="2" StartOffset="409"/>
+</LocList>
+<BasicStmnt CovItemId="S1" CovItemPrefix="samochody.Kierowca.java" Intrnl_Id="27">
+<LocList>
+<Loc EndOffset="359" SrcFileId="2" StartOffset="342"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S2" CovItemPrefix="samochody.Kierowca.java" Intrnl_Id="28">
+<LocList>
+<Loc EndOffset="378" SrcFileId="2" StartOffset="363"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S3" CovItemPrefix="samochody.Kierowca.java" Intrnl_Id="29">
+<LocList>
+<Loc EndOffset="405" SrcFileId="2" StartOffset="382"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S4" CovItemPrefix="samochody.Kierowca.java" Intrnl_Id="30">
+<LocList>
+<Loc EndOffset="445" SrcFileId="2" StartOffset="409"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="92" HierarchyLvlTypeId="5" Intrnl_Id="31" Name="getPesel">
+<Header>
+<Loc EndOffset="473" SrcFileId="2" StartOffset="452"/>
+</Header>
+<LocList>
+<Loc EndOffset="488" SrcFileId="2" StartOffset="452"/>
+</LocList>
+<StmntSeq Intrnl_Id="32">
+<LocList>
+<Loc EndOffset="487" SrcFileId="2" StartOffset="474"/>
+</LocList>
+<BasicStmnt CovItemId="S5" CovItemPrefix="samochody.Kierowca.java" Intrnl_Id="33">
+<LocList>
+<Loc EndOffset="487" SrcFileId="2" StartOffset="474"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="93" HierarchyLvlTypeId="5" Intrnl_Id="34" Name="znajdzSamochod">
+<Header>
+<Loc EndOffset="541" SrcFileId="2" StartOffset="491"/>
+</Header>
+<LocList>
+<Loc EndOffset="747" SrcFileId="2" StartOffset="491"/>
+</LocList>
+<StmntSeq Intrnl_Id="35">
+<LocList>
+<Loc EndOffset="727" SrcFileId="2" StartOffset="559"/>
+<Loc EndOffset="743" SrcFileId="2" StartOffset="731"/>
+</LocList>
+<LoopStmnt CovItemId="S6" CovItemPrefix="samochody.Kierowca.java" Intrnl_Id="36" MltplExecId="L1-2" MltplExecPrefix="samochody.Kierowca.java" NvrExecId="L1-0" NvrExecPrefix="samochody.Kierowca.java" OnceExecutedId="L1-1" OnceExecutedPrefix="samochody.Kierowca.java" OptBodyExec="true">
+<StmntSeq Intrnl_Id="37">
+<LocList>
+<Loc EndOffset="659" SrcFileId="2" StartOffset="636"/>
+<Loc EndOffset="720" SrcFileId="2" StartOffset="667"/>
+</LocList>
+<BasicStmnt CovItemId="S7" CovItemPrefix="samochody.Kierowca.java" Intrnl_Id="38">
+<LocList>
+<Loc EndOffset="659" SrcFileId="2" StartOffset="636"/>
+</LocList>
+</BasicStmnt>
+<CondStmnt CovItemId="S8" CovItemPrefix="samochody.Kierowca.java" Intrnl_Id="39">
+<Branch CovItemId="B1" CovItemPrefix="samochody.Kierowca.java" Implct="false" Intrnl_Id="40">
+<Cond/>
+<LocList>
+<Loc EndOffset="720" SrcFileId="2" StartOffset="711"/>
+</LocList>
+<StmntSeq Intrnl_Id="41">
+<LocList>
+<Loc EndOffset="720" SrcFileId="2" StartOffset="711"/>
+</LocList>
+<BasicStmnt CovItemId="S9" CovItemPrefix="samochody.Kierowca.java" Intrnl_Id="42">
+<LocList>
+<Loc EndOffset="720" SrcFileId="2" StartOffset="711"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</Branch>
+<Branch CovItemId="B2" CovItemPrefix="samochody.Kierowca.java" Implct="true" Intrnl_Id="43">
+<Cond/>
+<LocList/>
+<StmntSeq Intrnl_Id="44">
+<LocList/>
+</StmntSeq>
+</Branch>
+<Keyword EndOffset="669" SrcFileId="2" StartOffset="667"/>
+<LocList>
+<Loc EndOffset="720" SrcFileId="2" StartOffset="667"/>
+</LocList>
+<RootTerm CovItemId="C2" CovItemPrefix="samochody.Kierowca.java" Intrnl_Id="45">
+<BasicBoolTerm Intrnl_Id="46">
+<LocList>
+<Loc EndOffset="701" SrcFileId="2" StartOffset="670"/>
+</LocList>
+</BasicBoolTerm>
+</RootTerm>
+</CondStmnt>
+</StmntSeq>
+<Keyword EndOffset="562" SrcFileId="2" StartOffset="559"/>
+<LocList>
+<Loc EndOffset="727" SrcFileId="2" StartOffset="559"/>
+</LocList>
+<RootTerm CovItemId="C1" CovItemPrefix="samochody.Kierowca.java" Intrnl_Id="47">
+<BasicBoolTerm Intrnl_Id="48">
+<LocList>
+<Loc EndOffset="623" SrcFileId="2" StartOffset="610"/>
+</LocList>
+</BasicBoolTerm>
+</RootTerm>
+</LoopStmnt>
+<BasicStmnt CovItemId="S10" CovItemPrefix="samochody.Kierowca.java" Intrnl_Id="49">
+<LocList>
+<Loc EndOffset="743" SrcFileId="2" StartOffset="731"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="94" HierarchyLvlTypeId="5" Intrnl_Id="50" Name="getImieINazwisko">
+<Header>
+<Loc EndOffset="782" SrcFileId="2" StartOffset="750"/>
+</Header>
+<LocList>
+<Loc EndOffset="820" SrcFileId="2" StartOffset="750"/>
+</LocList>
+<StmntSeq Intrnl_Id="51">
+<LocList>
+<Loc EndOffset="816" SrcFileId="2" StartOffset="790"/>
+</LocList>
+<BasicStmnt CovItemId="S11" CovItemPrefix="samochody.Kierowca.java" Intrnl_Id="52">
+<LocList>
+<Loc EndOffset="816" SrcFileId="2" StartOffset="790"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="95" HierarchyLvlTypeId="5" Intrnl_Id="53" Name="amortyzujSamochody">
+<Header>
+<Loc EndOffset="855" SrcFileId="2" StartOffset="823"/>
+</Header>
+<LocList>
+<Loc EndOffset="998" SrcFileId="2" StartOffset="823"/>
+</LocList>
+<StmntSeq Intrnl_Id="54">
+<LocList>
+<Loc EndOffset="994" SrcFileId="2" StartOffset="864"/>
+</LocList>
+<LoopStmnt CovItemId="S12" CovItemPrefix="samochody.Kierowca.java" Intrnl_Id="55" MltplExecId="L2-2" MltplExecPrefix="samochody.Kierowca.java" NvrExecId="L2-0" NvrExecPrefix="samochody.Kierowca.java" OnceExecutedId="L2-1" OnceExecutedPrefix="samochody.Kierowca.java" OptBodyExec="true">
+<StmntSeq Intrnl_Id="56">
+<LocList>
+<Loc EndOffset="965" SrcFileId="2" StartOffset="942"/>
+<Loc EndOffset="988" SrcFileId="2" StartOffset="974"/>
+</LocList>
+<BasicStmnt CovItemId="S13" CovItemPrefix="samochody.Kierowca.java" Intrnl_Id="57">
+<LocList>
+<Loc EndOffset="965" SrcFileId="2" StartOffset="942"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S14" CovItemPrefix="samochody.Kierowca.java" Intrnl_Id="58">
+<LocList>
+<Loc EndOffset="988" SrcFileId="2" StartOffset="974"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+<Keyword EndOffset="867" SrcFileId="2" StartOffset="864"/>
+<LocList>
+<Loc EndOffset="994" SrcFileId="2" StartOffset="864"/>
+</LocList>
+<RootTerm CovItemId="C3" CovItemPrefix="samochody.Kierowca.java" Intrnl_Id="59">
+<BasicBoolTerm Intrnl_Id="60">
+<LocList>
+<Loc EndOffset="928" SrcFileId="2" StartOffset="915"/>
+</LocList>
+</BasicBoolTerm>
+</RootTerm>
+</LoopStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="96" HierarchyLvlTypeId="5" Intrnl_Id="61" Name="dodajSamochod">
+<Header>
+<Loc EndOffset="1046" SrcFileId="2" StartOffset="1002"/>
+</Header>
+<LocList>
+<Loc EndOffset="1082" SrcFileId="2" StartOffset="1002"/>
+</LocList>
+<StmntSeq Intrnl_Id="62">
+<LocList>
+<Loc EndOffset="1078" SrcFileId="2" StartOffset="1054"/>
+</LocList>
+<BasicStmnt CovItemId="S15" CovItemPrefix="samochody.Kierowca.java" Intrnl_Id="63">
+<LocList>
+<Loc EndOffset="1078" SrcFileId="2" StartOffset="1054"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+</HierarchyLvl>
+</HierarchyLvl>
+</HierarchyLvl>
+</MASTRoot>
+<TestSession Comment="" Date="1422699403940" Name="2015-01-31 11:16:43">
+<TestCase Comment="" Date="1422699403690" Name="samochody.KierowcaSamochodTesty:testAmortyzacjaSamochodu">
+<CovList>
+<CovPrefix CovItemPrefix="samochody.Kierowca.java">
+<Cov CovItemId="L2-1" Value="1"/>
+<Cov CovItemId="S1" Value="1"/>
+<Cov CovItemId="S12" Value="1"/>
+<Cov CovItemId="S13" Value="1"/>
+<Cov CovItemId="S14" Value="1"/>
+<Cov CovItemId="S15" Value="1"/>
+<Cov CovItemId="S2" Value="1"/>
+<Cov CovItemId="S3" Value="1"/>
+<Cov CovItemId="S4" Value="1"/>
+</CovPrefix>
+</CovList>
+<AssgnmntList>
+<AssgnmntPrefix RootTermCovItemPrefix="samochody.Kierowca.java">
+<AssgnmntListEntry Length="1" RootTermCovItemId="C3">
+<MapEntry BoolAssgnmnt="0" Value="1"/>
+<MapEntry BoolAssgnmnt="1" Value="1"/>
+</AssgnmntListEntry>
+</AssgnmntPrefix>
+</AssgnmntList>
+<ObjMetaDataList/>
+<MetaDataList/>
+</TestCase>
+<TestCase Comment="" Date="1422699403893" Name="samochody.KierowcaTesty:testZnajdzSamochodJeden">
+<CovList>
+<CovPrefix CovItemPrefix="samochody.Kierowca.java">
+<Cov CovItemId="B1" Value="1"/>
+<Cov CovItemId="L1-1" Value="1"/>
+<Cov CovItemId="S1" Value="1"/>
+<Cov CovItemId="S15" Value="1"/>
+<Cov CovItemId="S2" Value="1"/>
+<Cov CovItemId="S3" Value="1"/>
+<Cov CovItemId="S4" Value="1"/>
+<Cov CovItemId="S6" Value="1"/>
+<Cov CovItemId="S7" Value="1"/>
+<Cov CovItemId="S8" Value="1"/>
+<Cov CovItemId="S9" Value="1"/>
+</CovPrefix>
+</CovList>
+<AssgnmntList>
+<AssgnmntPrefix RootTermCovItemPrefix="samochody.Kierowca.java">
+<AssgnmntListEntry Length="1" RootTermCovItemId="C1">
+<MapEntry BoolAssgnmnt="1" Value="1"/>
+</AssgnmntListEntry>
+<AssgnmntListEntry Length="1" RootTermCovItemId="C2">
+<MapEntry BoolAssgnmnt="1" Value="1"/>
+</AssgnmntListEntry>
+</AssgnmntPrefix>
+</AssgnmntList>
+<ObjMetaDataList/>
+<MetaDataList/>
+</TestCase>
+<TestCase Comment="" Date="1422699403893" Name="samochody.KierowcaTesty:testAmortyzujSamochodyJeden">
+<CovList>
+<CovPrefix CovItemPrefix="samochody.Kierowca.java">
+<Cov CovItemId="L2-0" Value="1"/>
+<Cov CovItemId="S1" Value="1"/>
+<Cov CovItemId="S12" Value="1"/>
+<Cov CovItemId="S2" Value="1"/>
+<Cov CovItemId="S3" Value="1"/>
+<Cov CovItemId="S4" Value="1"/>
+</CovPrefix>
+</CovList>
+<AssgnmntList>
+<AssgnmntPrefix RootTermCovItemPrefix="samochody.Kierowca.java">
+<AssgnmntListEntry Length="1" RootTermCovItemId="C3">
+<MapEntry BoolAssgnmnt="0" Value="1"/>
+</AssgnmntListEntry>
+</AssgnmntPrefix>
+</AssgnmntList>
+<ObjMetaDataList/>
+<MetaDataList/>
+</TestCase>
+<TestCase Comment="" Date="1422699403893" Name="samochody.KierowcaTesty:testAmortyzujSamochodyWiele">
+<CovList>
+<CovPrefix CovItemPrefix="samochody.Kierowca.java">
+<Cov CovItemId="L2-0" Value="1"/>
+<Cov CovItemId="S1" Value="1"/>
+<Cov CovItemId="S12" Value="1"/>
+<Cov CovItemId="S2" Value="1"/>
+<Cov CovItemId="S3" Value="1"/>
+<Cov CovItemId="S4" Value="1"/>
+</CovPrefix>
+</CovList>
+<AssgnmntList>
+<AssgnmntPrefix RootTermCovItemPrefix="samochody.Kierowca.java">
+<AssgnmntListEntry Length="1" RootTermCovItemId="C3">
+<MapEntry BoolAssgnmnt="0" Value="1"/>
+</AssgnmntListEntry>
+</AssgnmntPrefix>
+</AssgnmntList>
+<ObjMetaDataList/>
+<MetaDataList/>
+</TestCase>
+<TestCase Comment="" Date="1422699403893" Name="samochody.KierowcaTesty:testGetPesel">
+<CovList>
+<CovPrefix CovItemPrefix="samochody.Kierowca.java">
+<Cov CovItemId="S1" Value="1"/>
+<Cov CovItemId="S2" Value="1"/>
+<Cov CovItemId="S3" Value="1"/>
+<Cov CovItemId="S4" Value="1"/>
+<Cov CovItemId="S5" Value="1"/>
+</CovPrefix>
+</CovList>
+<AssgnmntList/>
+<ObjMetaDataList/>
+<MetaDataList/>
+</TestCase>
+<TestCase Comment="" Date="1422699403893" Name="samochody.KierowcaTesty:testZnajdzSamochodWiecej">
+<CovList>
+<CovPrefix CovItemPrefix="samochody.Kierowca.java">
+<Cov CovItemId="B1" Value="1"/>
+<Cov CovItemId="B2" Value="1"/>
+<Cov CovItemId="L1-2" Value="1"/>
+<Cov CovItemId="S1" Value="1"/>
+<Cov CovItemId="S15" Value="2"/>
+<Cov CovItemId="S2" Value="1"/>
+<Cov CovItemId="S3" Value="1"/>
+<Cov CovItemId="S4" Value="1"/>
+<Cov CovItemId="S6" Value="1"/>
+<Cov CovItemId="S7" Value="2"/>
+<Cov CovItemId="S8" Value="2"/>
+<Cov CovItemId="S9" Value="1"/>
+</CovPrefix>
+</CovList>
+<AssgnmntList>
+<AssgnmntPrefix RootTermCovItemPrefix="samochody.Kierowca.java">
+<AssgnmntListEntry Length="1" RootTermCovItemId="C1">
+<MapEntry BoolAssgnmnt="1" Value="2"/>
+</AssgnmntListEntry>
+<AssgnmntListEntry Length="1" RootTermCovItemId="C2">
+<MapEntry BoolAssgnmnt="0" Value="1"/>
+<MapEntry BoolAssgnmnt="1" Value="1"/>
+</AssgnmntListEntry>
+</AssgnmntPrefix>
+</AssgnmntList>
+<ObjMetaDataList/>
+<MetaDataList/>
+</TestCase>
+<TestCase Comment="" Date="1422699403893" Name="samochody.KierowcaTesty:testDaneKierowcy">
+<CovList>
+<CovPrefix CovItemPrefix="samochody.Kierowca.java">
+<Cov CovItemId="S1" Value="1"/>
+<Cov CovItemId="S11" Value="1"/>
+<Cov CovItemId="S2" Value="1"/>
+<Cov CovItemId="S3" Value="1"/>
+<Cov CovItemId="S4" Value="1"/>
+</CovPrefix>
+</CovList>
+<AssgnmntList/>
+<ObjMetaDataList/>
+<MetaDataList/>
+</TestCase>
+<TestCase Comment="" Date="1422699403893" Name="samochody.KierowcaTesty:testZnajdzSamochodNieZnaleziono">
+<CovList>
+<CovPrefix CovItemPrefix="samochody.Kierowca.java">
+<Cov CovItemId="B2" Value="1"/>
+<Cov CovItemId="L1-1" Value="1"/>
+<Cov CovItemId="S1" Value="1"/>
+<Cov CovItemId="S10" Value="1"/>
+<Cov CovItemId="S15" Value="1"/>
+<Cov CovItemId="S2" Value="1"/>
+<Cov CovItemId="S3" Value="1"/>
+<Cov CovItemId="S4" Value="1"/>
+<Cov CovItemId="S6" Value="1"/>
+<Cov CovItemId="S7" Value="1"/>
+<Cov CovItemId="S8" Value="1"/>
+</CovPrefix>
+</CovList>
+<AssgnmntList>
+<AssgnmntPrefix RootTermCovItemPrefix="samochody.Kierowca.java">
+<AssgnmntListEntry Length="1" RootTermCovItemId="C1">
+<MapEntry BoolAssgnmnt="0" Value="1"/>
+<MapEntry BoolAssgnmnt="1" Value="1"/>
+</AssgnmntListEntry>
+<AssgnmntListEntry Length="1" RootTermCovItemId="C2">
+<MapEntry BoolAssgnmnt="0" Value="1"/>
+</AssgnmntListEntry>
+</AssgnmntPrefix>
+</AssgnmntList>
+<ObjMetaDataList/>
+<MetaDataList/>
+</TestCase>
+<TestCase Comment="" Date="1422699403909" Name="samochody.KierowcaTesty:testZnajdzSamochodZero">
+<CovList>
+<CovPrefix CovItemPrefix="samochody.Kierowca.java">
+<Cov CovItemId="L1-0" Value="1"/>
+<Cov CovItemId="S1" Value="1"/>
+<Cov CovItemId="S10" Value="1"/>
+<Cov CovItemId="S2" Value="1"/>
+<Cov CovItemId="S3" Value="1"/>
+<Cov CovItemId="S4" Value="1"/>
+<Cov CovItemId="S6" Value="1"/>
+</CovPrefix>
+</CovList>
+<AssgnmntList>
+<AssgnmntPrefix RootTermCovItemPrefix="samochody.Kierowca.java">
+<AssgnmntListEntry Length="1" RootTermCovItemId="C1">
+<MapEntry BoolAssgnmnt="0" Value="1"/>
+</AssgnmntListEntry>
+</AssgnmntPrefix>
+</AssgnmntList>
+<ObjMetaDataList/>
+<MetaDataList/>
+</TestCase>
+<TestCase Comment="" Date="1422699403909" Name="samochody.KierowcaTesty:testAmortyzujSamochodyZero">
+<CovList>
+<CovPrefix CovItemPrefix="samochody.Kierowca.java">
+<Cov CovItemId="L2-0" Value="1"/>
+<Cov CovItemId="S1" Value="1"/>
+<Cov CovItemId="S12" Value="1"/>
+<Cov CovItemId="S2" Value="1"/>
+<Cov CovItemId="S3" Value="1"/>
+<Cov CovItemId="S4" Value="1"/>
+</CovPrefix>
+</CovList>
+<AssgnmntList>
+<AssgnmntPrefix RootTermCovItemPrefix="samochody.Kierowca.java">
+<AssgnmntListEntry Length="1" RootTermCovItemId="C3">
+<MapEntry BoolAssgnmnt="0" Value="1"/>
+</AssgnmntListEntry>
+</AssgnmntPrefix>
+</AssgnmntList>
+<ObjMetaDataList/>
+<MetaDataList/>
+</TestCase>
+<TestCase Comment="" Date="1422699403909" Name="samochody.SamochodTesty:testGetRejestracja">
+<CovList>
+<CovPrefix CovItemPrefix="samochody.Samochod.java">
+<Cov CovItemId="S1" Value="1"/>
+<Cov CovItemId="S2" Value="1"/>
+<Cov CovItemId="S3" Value="1"/>
+<Cov CovItemId="S4" Value="1"/>
+</CovPrefix>
+</CovList>
+<AssgnmntList/>
+<ObjMetaDataList/>
+<MetaDataList/>
+</TestCase>
+<TestCase Comment="" Date="1422699403909" Name="samochody.SamochodTesty:testAmortyzuj">
+<CovList>
+<CovPrefix CovItemPrefix="samochody.Samochod.java">
+<Cov CovItemId="S1" Value="1"/>
+<Cov CovItemId="S2" Value="1"/>
+<Cov CovItemId="S3" Value="1"/>
+<Cov CovItemId="S5" Value="1"/>
+<Cov CovItemId="S6" Value="1"/>
+</CovPrefix>
+</CovList>
+<AssgnmntList/>
+<ObjMetaDataList/>
+<MetaDataList/>
+</TestCase>
+<TestCase Comment="" Date="1422699403909" Name="samochody.SamochodTesty:testGetWartosc">
+<CovList>
+<CovPrefix CovItemPrefix="samochody.Samochod.java">
+<Cov CovItemId="S1" Value="1"/>
+<Cov CovItemId="S2" Value="1"/>
+<Cov CovItemId="S3" Value="1"/>
+<Cov CovItemId="S6" Value="1"/>
+</CovPrefix>
+</CovList>
+<AssgnmntList/>
+<ObjMetaDataList/>
+<MetaDataList/>
+</TestCase>
+<MetaDataList/>
+</TestSession>
+<TestSession Comment="" Date="1422699891691" Name="2015-01-31 11:24:51">
+<TestCase Comment="" Date="1422699891456" Name="samochody.KierowcaSamochodTesty:testAmortyzacjaSamochodu">
+<CovList>
+<CovPrefix CovItemPrefix="samochody.Kierowca.java">
+<Cov CovItemId="L2-1" Value="1"/>
+<Cov CovItemId="S1" Value="1"/>
+<Cov CovItemId="S12" Value="1"/>
+<Cov CovItemId="S13" Value="1"/>
+<Cov CovItemId="S14" Value="1"/>
+<Cov CovItemId="S15" Value="1"/>
+<Cov CovItemId="S2" Value="1"/>
+<Cov CovItemId="S3" Value="1"/>
+<Cov CovItemId="S4" Value="1"/>
+</CovPrefix>
+</CovList>
+<AssgnmntList>
+<AssgnmntPrefix RootTermCovItemPrefix="samochody.Kierowca.java">
+<AssgnmntListEntry Length="1" RootTermCovItemId="C3">
+<MapEntry BoolAssgnmnt="0" Value="1"/>
+<MapEntry BoolAssgnmnt="1" Value="1"/>
+</AssgnmntListEntry>
+</AssgnmntPrefix>
+</AssgnmntList>
+<ObjMetaDataList/>
+<MetaDataList/>
+</TestCase>
+<TestCase Comment="" Date="1422699891660" Name="samochody.KierowcaTesty:testZnajdzSamochodJeden">
+<CovList>
+<CovPrefix CovItemPrefix="samochody.Kierowca.java">
+<Cov CovItemId="B1" Value="1"/>
+<Cov CovItemId="L1-1" Value="1"/>
+<Cov CovItemId="S1" Value="1"/>
+<Cov CovItemId="S15" Value="1"/>
+<Cov CovItemId="S2" Value="1"/>
+<Cov CovItemId="S3" Value="1"/>
+<Cov CovItemId="S4" Value="1"/>
+<Cov CovItemId="S6" Value="1"/>
+<Cov CovItemId="S7" Value="1"/>
+<Cov CovItemId="S8" Value="1"/>
+<Cov CovItemId="S9" Value="1"/>
+</CovPrefix>
+</CovList>
+<AssgnmntList>
+<AssgnmntPrefix RootTermCovItemPrefix="samochody.Kierowca.java">
+<AssgnmntListEntry Length="1" RootTermCovItemId="C1">
+<MapEntry BoolAssgnmnt="1" Value="1"/>
+</AssgnmntListEntry>
+<AssgnmntListEntry Length="1" RootTermCovItemId="C2">
+<MapEntry BoolAssgnmnt="1" Value="1"/>
+</AssgnmntListEntry>
+</AssgnmntPrefix>
+</AssgnmntList>
+<ObjMetaDataList/>
+<MetaDataList/>
+</TestCase>
+<TestCase Comment="" Date="1422699891660" Name="samochody.KierowcaTesty:testAmortyzujSamochodyJeden">
+<CovList>
+<CovPrefix CovItemPrefix="samochody.Kierowca.java">
+<Cov CovItemId="L2-1" Value="1"/>
+<Cov CovItemId="S1" Value="1"/>
+<Cov CovItemId="S12" Value="1"/>
+<Cov CovItemId="S13" Value="1"/>
+<Cov CovItemId="S14" Value="1"/>
+<Cov CovItemId="S15" Value="1"/>
+<Cov CovItemId="S2" Value="1"/>
+<Cov CovItemId="S3" Value="1"/>
+<Cov CovItemId="S4" Value="1"/>
+</CovPrefix>
+</CovList>
+<AssgnmntList>
+<AssgnmntPrefix RootTermCovItemPrefix="samochody.Kierowca.java">
+<AssgnmntListEntry Length="1" RootTermCovItemId="C3">
+<MapEntry BoolAssgnmnt="0" Value="1"/>
+<MapEntry BoolAssgnmnt="1" Value="1"/>
+</AssgnmntListEntry>
+</AssgnmntPrefix>
+</AssgnmntList>
+<ObjMetaDataList/>
+<MetaDataList/>
+</TestCase>
+<TestCase Comment="" Date="1422699891660" Name="samochody.KierowcaTesty:testAmortyzujSamochodyWiele">
+<CovList>
+<CovPrefix CovItemPrefix="samochody.Kierowca.java">
+<Cov CovItemId="L2-2" Value="1"/>
+<Cov CovItemId="S1" Value="1"/>
+<Cov CovItemId="S12" Value="1"/>
+<Cov CovItemId="S13" Value="2"/>
+<Cov CovItemId="S14" Value="2"/>
+<Cov CovItemId="S15" Value="2"/>
+<Cov CovItemId="S2" Value="1"/>
+<Cov CovItemId="S3" Value="1"/>
+<Cov CovItemId="S4" Value="1"/>
+</CovPrefix>
+</CovList>
+<AssgnmntList>
+<AssgnmntPrefix RootTermCovItemPrefix="samochody.Kierowca.java">
+<AssgnmntListEntry Length="1" RootTermCovItemId="C3">
+<MapEntry BoolAssgnmnt="0" Value="1"/>
+<MapEntry BoolAssgnmnt="1" Value="2"/>
+</AssgnmntListEntry>
+</AssgnmntPrefix>
+</AssgnmntList>
+<ObjMetaDataList/>
+<MetaDataList/>
+</TestCase>
+<TestCase Comment="" Date="1422699891660" Name="samochody.KierowcaTesty:testGetPesel">
+<CovList>
+<CovPrefix CovItemPrefix="samochody.Kierowca.java">
+<Cov CovItemId="S1" Value="1"/>
+<Cov CovItemId="S2" Value="1"/>
+<Cov CovItemId="S3" Value="1"/>
+<Cov CovItemId="S4" Value="1"/>
+<Cov CovItemId="S5" Value="1"/>
+</CovPrefix>
+</CovList>
+<AssgnmntList/>
+<ObjMetaDataList/>
+<MetaDataList/>
+</TestCase>
+<TestCase Comment="" Date="1422699891660" Name="samochody.KierowcaTesty:testZnajdzSamochodWiecej">
+<CovList>
+<CovPrefix CovItemPrefix="samochody.Kierowca.java">
+<Cov CovItemId="B1" Value="1"/>
+<Cov CovItemId="B2" Value="1"/>
+<Cov CovItemId="L1-2" Value="1"/>
+<Cov CovItemId="S1" Value="1"/>
+<Cov CovItemId="S15" Value="2"/>
+<Cov CovItemId="S2" Value="1"/>
+<Cov CovItemId="S3" Value="1"/>
+<Cov CovItemId="S4" Value="1"/>
+<Cov CovItemId="S6" Value="1"/>
+<Cov CovItemId="S7" Value="2"/>
+<Cov CovItemId="S8" Value="2"/>
+<Cov CovItemId="S9" Value="1"/>
+</CovPrefix>
+</CovList>
+<AssgnmntList>
+<AssgnmntPrefix RootTermCovItemPrefix="samochody.Kierowca.java">
+<AssgnmntListEntry Length="1" RootTermCovItemId="C1">
+<MapEntry BoolAssgnmnt="1" Value="2"/>
+</AssgnmntListEntry>
+<AssgnmntListEntry Length="1" RootTermCovItemId="C2">
+<MapEntry BoolAssgnmnt="0" Value="1"/>
+<MapEntry BoolAssgnmnt="1" Value="1"/>
+</AssgnmntListEntry>
+</AssgnmntPrefix>
+</AssgnmntList>
+<ObjMetaDataList/>
+<MetaDataList/>
+</TestCase>
+<TestCase Comment="" Date="1422699891660" Name="samochody.KierowcaTesty:testDaneKierowcy">
+<CovList>
+<CovPrefix CovItemPrefix="samochody.Kierowca.java">
+<Cov CovItemId="S1" Value="1"/>
+<Cov CovItemId="S11" Value="1"/>
+<Cov CovItemId="S2" Value="1"/>
+<Cov CovItemId="S3" Value="1"/>
+<Cov CovItemId="S4" Value="1"/>
+</CovPrefix>
+</CovList>
+<AssgnmntList/>
+<ObjMetaDataList/>
+<MetaDataList/>
+</TestCase>
+<TestCase Comment="" Date="1422699891660" Name="samochody.KierowcaTesty:testZnajdzSamochodNieZnaleziono">
+<CovList>
+<CovPrefix CovItemPrefix="samochody.Kierowca.java">
+<Cov CovItemId="B2" Value="1"/>
+<Cov CovItemId="L1-1" Value="1"/>
+<Cov CovItemId="S1" Value="1"/>
+<Cov CovItemId="S10" Value="1"/>
+<Cov CovItemId="S15" Value="1"/>
+<Cov CovItemId="S2" Value="1"/>
+<Cov CovItemId="S3" Value="1"/>
+<Cov CovItemId="S4" Value="1"/>
+<Cov CovItemId="S6" Value="1"/>
+<Cov CovItemId="S7" Value="1"/>
+<Cov CovItemId="S8" Value="1"/>
+</CovPrefix>
+</CovList>
+<AssgnmntList>
+<AssgnmntPrefix RootTermCovItemPrefix="samochody.Kierowca.java">
+<AssgnmntListEntry Length="1" RootTermCovItemId="C1">
+<MapEntry BoolAssgnmnt="0" Value="1"/>
+<MapEntry BoolAssgnmnt="1" Value="1"/>
+</AssgnmntListEntry>
+<AssgnmntListEntry Length="1" RootTermCovItemId="C2">
+<MapEntry BoolAssgnmnt="0" Value="1"/>
+</AssgnmntListEntry>
+</AssgnmntPrefix>
+</AssgnmntList>
+<ObjMetaDataList/>
+<MetaDataList/>
+</TestCase>
+<TestCase Comment="" Date="1422699891660" Name="samochody.KierowcaTesty:testZnajdzSamochodZero">
+<CovList>
+<CovPrefix CovItemPrefix="samochody.Kierowca.java">
+<Cov CovItemId="L1-0" Value="1"/>
+<Cov CovItemId="S1" Value="1"/>
+<Cov CovItemId="S10" Value="1"/>
+<Cov CovItemId="S2" Value="1"/>
+<Cov CovItemId="S3" Value="1"/>
+<Cov CovItemId="S4" Value="1"/>
+<Cov CovItemId="S6" Value="1"/>
+</CovPrefix>
+</CovList>
+<AssgnmntList>
+<AssgnmntPrefix RootTermCovItemPrefix="samochody.Kierowca.java">
+<AssgnmntListEntry Length="1" RootTermCovItemId="C1">
+<MapEntry BoolAssgnmnt="0" Value="1"/>
+</AssgnmntListEntry>
+</AssgnmntPrefix>
+</AssgnmntList>
+<ObjMetaDataList/>
+<MetaDataList/>
+</TestCase>
+<TestCase Comment="" Date="1422699891675" Name="samochody.KierowcaTesty:testAmortyzujSamochodyZero">
+<CovList>
+<CovPrefix CovItemPrefix="samochody.Kierowca.java">
+<Cov CovItemId="L2-0" Value="1"/>
+<Cov CovItemId="S1" Value="1"/>
+<Cov CovItemId="S12" Value="1"/>
+<Cov CovItemId="S2" Value="1"/>
+<Cov CovItemId="S3" Value="1"/>
+<Cov CovItemId="S4" Value="1"/>
+</CovPrefix>
+</CovList>
+<AssgnmntList>
+<AssgnmntPrefix RootTermCovItemPrefix="samochody.Kierowca.java">
+<AssgnmntListEntry Length="1" RootTermCovItemId="C3">
+<MapEntry BoolAssgnmnt="0" Value="1"/>
+</AssgnmntListEntry>
+</AssgnmntPrefix>
+</AssgnmntList>
+<ObjMetaDataList/>
+<MetaDataList/>
+</TestCase>
+<TestCase Comment="" Date="1422699891675" Name="samochody.SamochodTesty:testGetRejestracja">
+<CovList>
+<CovPrefix CovItemPrefix="samochody.Samochod.java">
+<Cov CovItemId="S1" Value="1"/>
+<Cov CovItemId="S2" Value="1"/>
+<Cov CovItemId="S3" Value="1"/>
+<Cov CovItemId="S4" Value="1"/>
+</CovPrefix>
+</CovList>
+<AssgnmntList/>
+<ObjMetaDataList/>
+<MetaDataList/>
+</TestCase>
+<TestCase Comment="" Date="1422699891675" Name="samochody.SamochodTesty:testAmortyzuj">
+<CovList>
+<CovPrefix CovItemPrefix="samochody.Samochod.java">
+<Cov CovItemId="S1" Value="1"/>
+<Cov CovItemId="S2" Value="1"/>
+<Cov CovItemId="S3" Value="1"/>
+<Cov CovItemId="S5" Value="1"/>
+<Cov CovItemId="S6" Value="1"/>
+</CovPrefix>
+</CovList>
+<AssgnmntList/>
+<ObjMetaDataList/>
+<MetaDataList/>
+</TestCase>
+<TestCase Comment="" Date="1422699891675" Name="samochody.SamochodTesty:testGetWartosc">
+<CovList>
+<CovPrefix CovItemPrefix="samochody.Samochod.java">
+<Cov CovItemId="S1" Value="1"/>
+<Cov CovItemId="S2" Value="1"/>
+<Cov CovItemId="S3" Value="1"/>
+<Cov CovItemId="S6" Value="1"/>
+</CovPrefix>
+</CovList>
+<AssgnmntList/>
+<ObjMetaDataList/>
+<MetaDataList/>
+</TestCase>
+<MetaDataList/>
+</TestSession>
+</TestSessionContainer>
