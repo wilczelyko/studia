@@ -1,0 +1,2 @@
+# studia
+Metody Wytwarzania Oprogramowania
